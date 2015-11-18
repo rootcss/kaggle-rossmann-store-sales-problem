@@ -31,7 +31,15 @@ class XGBoost:
 		dmtrain = xgb.DMatrix(X_train[features], np.log1p(X_train.Sales))
 		dmvalid = xgb.DMatrix(X_valid[features], np.log1p(X_valid.Sales))
 		watchlist = [(dmtrain, 'train'), (dmvalid, 'eval')]
-		self.xgbModel = xgb.train(self.xgb_params, dmtrain, self.xgb_num_boost_round, evals=watchlist, early_stopping_rounds=100, feval=self.rmspe_xg, verbose_eval=True)
+		self.xgbModel = xgb.train( \
+							self.xgb_params, \
+							dmtrain, \
+							self.xgb_num_boost_round, \
+							evals=watchlist, \
+							early_stopping_rounds=100, \
+							feval=self.rmspe_xg, \
+							verbose_eval=True \
+						)
 		return {'X_train' : X_train, 'X_valid' : X_valid, 'xgbModel' : self.xgbModel}
 
 	def validateXGBModel(self, model_data):

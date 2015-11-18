@@ -21,7 +21,7 @@ for feature in ross.features:
     if feature not in unique_features:
         unique_features.append(feature)
 ross.features = unique_features
-ross.xgb_num_boost_round = 1
+ross.xgb_num_boost_round = 1700
 model_data = ross.trainXGBModel(ross.train, ross.features)
 
 # Validating and Printing

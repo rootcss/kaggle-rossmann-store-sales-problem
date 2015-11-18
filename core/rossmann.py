@@ -67,12 +67,12 @@ class Rossmann(XGBoost):
     df = pd.DataFrame(importance, columns=['feature', 'fscore'])
     df['fscore'] = df['fscore'] / df['fscore'].sum()
     # Kind: bar, barh, area
-    featp = df.plot(kind='bar', x='feature', y='fscore', legend=False, figsize=(12, 8), color='Gray')
+    featp = df.plot(kind='barh', x='feature', y='fscore', legend=False, figsize=(8, 12), color='Gray')
     plt.title('XGB Feature Importance')
-    plt.xlabel('Features')
-    plt.ylabel('Relative importance')
+    plt.ylabel('Features')
+    plt.xlabel('Relative importance')
     fig_featp = featp.get_figure()
-    fig_featp.savefig(output, bbox_inches='tight', pad_inches=1)
+    fig_featp.savefig(output, bbox_inches='tight', pad_inches=0.5)
 
   def generate_features(self, features, data):
     data.fillna(0, inplace=True)
