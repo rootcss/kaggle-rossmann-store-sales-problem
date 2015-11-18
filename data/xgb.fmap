@@ -1,0 +1,16 @@
+0	Store	q
+1	CompetitionDistance	q
+2	CompetitionOpenSinceMonth	q
+3	CompetitionOpenSinceYear	q
+4	Promo	q
+5	Promo2	q
+6	Promo2SinceWeek	q
+7	Promo2SinceYear	q
+8	SchoolHoliday	q
+9	StoreType	q
+10	Assortment	q
+11	StateHoliday	q
+12	DayOfWeek	q
+13	month	q
+14	day	q
+15	year	q
